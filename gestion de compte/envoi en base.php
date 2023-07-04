@@ -5,8 +5,11 @@ $username = "root";
 $password = "";
 $database = "gestion_de_compte";
 
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($servername, $username, $password, $database);{
+  echo"connexion bien établit";
+}
 
+header("location:Accueil.php");
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $date = $_POST['date_naissance'];
@@ -20,5 +23,18 @@ $conn = mysqli_connect($servername, $username, $password, $database);
       $req ="INSERT INTO `utilisateur`(`nom`, `prenom`, `date_naissance`, `sexe`, `email`, `mot_passe`)
         VALUES ('$nom','$prenom','$date','$sex',' $mail',' $pass')";
         mysqli_query($conn, $req);
+        if (mysqli_query($conn, $sql))
+        {
+            // L'inscription a réussi
+            $success = "Inscription réussie. Vous pouvez maintenant vous connecter en tant qu'utilisateur.";
+        }
+        else
+        {
+            // Erreur lors de l'inscription
+            $error = "Une erreur est survenue lors de l'inscription. Veuillez réessayer.";
+        }
+        
+
+        
 
     ?>

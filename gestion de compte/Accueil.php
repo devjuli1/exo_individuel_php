@@ -1,22 +1,21 @@
 <?php
-// Début de la session
 session_start();
 
-// Destruction de la session
-session_unset();
-session_destroy();
+if (!isset($_SESSION["email"])) {
+    header("Location: connexion.php");
+    exit();
+}
 
-// Redirection vers la page de connexion
-header("Location:connexion.php");
-exit;
+$email = $_SESSION["email"] ?? "";
+$mot_de_passe = $_SESSION["mot_passe"] ?? "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Deconnexion</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -38,22 +37,27 @@ exit;
 <!--===============================================================================================-->
 </head>
 <body>
-	
-	<div class="limiter">
+ 
+<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
-					<a href="connexion.php">logout</a>	
+                       <P>BIENVENU </P>
+                       <?php  $success = "Bravooo!.Vous pouvez maintenant vous connecter en tant qu'utilisateur.";
+                     echo"$success"
+                     ?>
+                       <a href="">
+                       <button type="submit" name="connexion">Se connecter</button>
+                    </a>	
 					</span>
 				</form>
 			</div>
 		</div>
 	</div>
-	
-	
+
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
@@ -68,6 +72,5 @@ exit;
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-
 </body>
 </html>

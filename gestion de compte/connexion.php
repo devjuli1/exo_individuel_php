@@ -7,7 +7,7 @@ session_start();
 if (isset($_SESSION['utilisateur']) && $_SESSION['utilisateur'] === true)
 {
     // Rediriger vers la page d'administration si l'administrateur est déjà connecté
-    header("Location: deconnexion.php");
+    header("Location: Accueil.php");
     exit;
 }
 
@@ -51,8 +51,8 @@ $error = "";
 						Page connexion
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-						<input class="input100" type="text" name="username" placeholder="Username">
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
+						<input class="input100" type="text" name="email" placeholder="Email">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -66,7 +66,7 @@ $error = "";
 							Forgot
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="connexion.php" class="txt2">
 							email / mot_de_passe?
 						</a>
 					</div>
@@ -82,8 +82,8 @@ $error = "";
 							Don’t have an account?
 						</span>
 
-						<a href="#" class="txt3">
-							Connecter maintenant
+						<a href="inscription.php" class="txt3">
+							S'inscrire maintenant
 						</a>
 					</div>
 				</form>

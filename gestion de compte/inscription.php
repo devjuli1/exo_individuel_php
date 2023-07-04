@@ -33,7 +33,7 @@
 			<div class="wrap-login100">
 				<form method="post" action='envoi en base.php' class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
-						Sign in
+						Page d'inscription
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="S'il vous plait entrer votre nom">
@@ -50,7 +50,7 @@
 						<span class="focus-input100"></span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate="S'il vous plait entrer votre sexe">
-						<input class="input100" type="text" name="sexe" placeholder="Sexe">
+						<input class="input100" type="bolean" name="sexe" placeholder="Sexe">
 						<span class="focus-input100"></span>
                     </div>
                     <div class="wrap-input100 validate-input m-b-16" data-validate="S'il vous plait entrer votre email">
@@ -68,25 +68,15 @@
 							authentifier
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="connexion.php" class="txt2">
 							email / mot_de_passe?
 						</a>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button type='submit' name='sign in' class="login100-form-btn">
-							Sign in
-						</button>
-					</div>
-
-					<div class="flex-col-c p-t-170 p-b-40">
-						<span class="txt1 p-b-9">
-							Don’t have an account?
-						</span>
-
-						<a href="#" class="txt3">
-							sign in now
-						</a>
+					<a href="Accueil.php">	<button type='submit' name='sign in' class="login100-form-btn">
+						S'enregistrer
+						</button></a>
 					</div>
 				</form>
 			</div>
