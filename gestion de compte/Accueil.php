@@ -1,9 +1,10 @@
 <?php
 session_start();
-
+include
 if (!isset($_SESSION["email"])) {
     header("Location: connexion.php");
     exit();
+
 }
 
 $email = $_SESSION["email"] ?? "";
@@ -43,11 +44,11 @@ $mot_de_passe = $_SESSION["mot_passe"] ?? "";
 			<div class="wrap-login100">
 				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
-                       <P>BIENVENU </P>
+                       <P>BIENVENU <?= echo $nom.''.$prenom;?>!</P>
                        <?php  $success = "Bravooo!.Vous pouvez maintenant vous connecter en tant qu'utilisateur.";
                      echo"$success"
                      ?>
-                       <a href="">
+                       <a href="connexion.php">
                        <button type="submit" name="connexion">Se connecter</button>
                     </a>	
 					</span>

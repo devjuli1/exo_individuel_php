@@ -9,12 +9,12 @@ $database = "gestion_de_compte";
 $conn = mysqli_connect($servername, $username, $password, $database);
 if ($conn)
 {
-	 echo "Connection done";
+	 echo "Connexion bien établie";
 }
 else
 {
 	//echo "Connection failed";  
 	//or use to see error funtion of php	
-	die("Connection failed beacuase " . mysqli_connect_error());
+	die("Connexion échouée" . mysqli_connect_error());
 }
 ?>
